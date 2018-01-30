@@ -2,6 +2,7 @@
 
 namespace Dhii\Data\Container;
 
+use Psr\Container\ContainerInterface as BaseContainerInterface;
 use Exception as RootException;
 use InvalidArgumentException;
 
@@ -17,7 +18,7 @@ trait ContainerAwareTrait
      *
      * @since [*next-version*]
      *
-     * @var ContainerInterface|null
+     * @var BaseContainerInterface|null
      */
     protected $container;
 
@@ -26,7 +27,7 @@ trait ContainerAwareTrait
      *
      * @since [*next-version*]
      *
-     * @return ContainerInterface|null The container, if any.
+     * @return BaseContainerInterface|null The container, if any.
      */
     protected function _getContainer()
     {
@@ -38,13 +39,13 @@ trait ContainerAwareTrait
      *
      * @since [*next-version*]
      *
-     * @param ContainerInterface|null $container The container.
+     * @param BaseContainerInterface|null $container The container.
      *
      * @throws InvalidArgumentException If not a valid container.
      */
     protected function _setContainer($container)
     {
-        if (!is_null($container) && !($container instanceof ContainerInterface)) {
+        if (!is_null($container) && !($container instanceof BaseContainerInterface)) {
             throw $this->_createInvalidArgumentException($this->__('Not a valid container'), 0, null, $container);
         }
 

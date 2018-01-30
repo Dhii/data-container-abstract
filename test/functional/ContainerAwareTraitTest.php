@@ -6,7 +6,7 @@ use Xpmock\TestCase;
 use InvalidArgumentException;
 use Dhii\Data\Container\ContainerAwareTrait as TestSubject;
 use PHPUnit_Framework_MockObject_MockObject as MockObject;
-use Dhii\Data\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 
 /**
  * Tests {@see TestSubject}.
